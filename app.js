@@ -1,36 +1,43 @@
+require('coffee-script');
 
-/**
- * Module dependencies.
- */
-
-var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path');
+var express = require('express');
+var http = require('http');
+var routes = require('./app/router');
+var config = require('./global').config;
 
 var app = express();
+var static_dir = __dirname + '/app/assets';
 
-app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
+app.configure(function () {
+  app.set('port', config.port);
+  app.set('views', __dirname + '/app/views');
   app.set('view engine', 'ejs');
-  app.use(express.favicon());
+  app.use(express.compress());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(app.router);
-  app.use(require('stylus').middleware(__dirname + '/public'));
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.cookieParser());
+  app.use(express.session({ secret: config.secretKey }));
 });
 
-app.configure('development', function(){
+app.configure('development', function () {
+  app.use(express.static(static_dir));
+  app.use(express.errorHandler({
+    dumpExceptions: true,
+    showStack: true
+  }));
+});
+
+app.configure('production', function () {
+  var one_year = 31557600000;
+  app.use(express.static(static_dir, {
+    maxAge: one_year
+  }));
   app.use(express.errorHandler());
+  app.set('view cache', true);
 });
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+routes(app);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+http.createServer(app).listen(app.get('port'), function () {
+  console.log("niki server listening on port " + app.get('port'));
 });
