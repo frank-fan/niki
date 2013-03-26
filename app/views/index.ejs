@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/css/reset.css'/>
   <link rel='stylesheet' href='/css/style.css'/>
+  <script type="text/javascript" src="/libs/editor/js/editor.js"></script>
+  <link rel="stylesheet" href="/libs/editor/css/editor.css" />
 </head>
 <body>
 <header id="masthead">
@@ -25,15 +27,29 @@
 <div id="mastcontent" class="container">
   <h1 id="wikiTitle">我是标题：<%= title %></h1>
   <div id="wikiTool" class="btns">
-    <a class="btn" href="#edit">EDIT</a>
+    <a id="page-edit" class="btn" href="#edit">EDIT</a>
   </div>
-  <article id="wikiContent">
-    <p>Welcome to <%= title %></p>
-    <p>Welcome to <%= title %></p>
-    <p>Welcome to <%= title %></p>
-    <p>Welcome to <%= title %></p>
-    <p>Welcome to <%= title %></p>
-  </article>
+  <section id="wikiContent">
+    <article id="article-wrapper">
+      <p>Welcome to <%= title %></p>
+      <p>Welcome to <%= title %></p>
+      <p>Welcome to <%= title %></p>
+      <p>Welcome to <%= title %></p>
+      <p>Welcome to <%= title %></p>
+    </article>
+    <div id="editor-wrapper" style="display: none">
+      <textarea id="editor" placeholder="Content here ...."></textarea>
+    </div>
+  </section>
 </div>
+<script type="text/javascript">
+  document.getElementById('page-edit').onclick = function(){
+    document.getElementById('article-wrapper').setAttribute('style','display:none;');
+    document.getElementById('editor-wrapper').setAttribute('style','display:block;');
+    document.getElementById('wikiTitle').setAttribute('contenteditable','');
+    var editor = new Editor();
+    editor.render();
+  }
+</script>
 </body>
 </html>

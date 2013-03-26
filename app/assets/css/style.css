@@ -73,7 +73,7 @@ body {
 #wikiTool {
     position: absolute;
     right: 5px;
-    top: 25px;
+    top: 12px;
 }
 
 #wikiTool .btn {
@@ -95,7 +95,7 @@ body {
 
 #wikiTitle {
     font-size: 28px;
-    line-height: 2.5em;
+    margin: 10px 0;
 }
 
 #wikiContent {
@@ -106,4 +106,8 @@ body {
     -moz-box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
     -webkit-box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
     box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
+}
+
+.editor-toolbar{
+    text-align: center;
 }
