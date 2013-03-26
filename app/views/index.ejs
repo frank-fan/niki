@@ -3,6 +3,7 @@
 <head>
   <title><%= title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/css/reset.css'/>
   <link rel='stylesheet' href='/css/style.css'/>
 </head>
 <body>
@@ -22,9 +23,9 @@
     </div>
 </section>
 <div id="mastcontent" class="container">
-  <h1 id="wikiTitle"><%= title %></h1>
+  <h1 id="wikiTitle">我是标题：<%= title %></h1>
   <div id="wikiTool" class="btns">
-    <a class="btn btn-primary" href="#edit">编辑</a>
+    <a class="btn" href="#edit">EDIT</a>
   </div>
   <article id="wikiContent">
     <p>Welcome to <%= title %></p>
@@ -33,8 +34,6 @@
     <p>Welcome to <%= title %></p>
     <p>Welcome to <%= title %></p>
   </article>
-
 </div>
-
 </body>
 </html>
