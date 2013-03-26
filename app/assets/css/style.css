@@ -1,0 +1,85 @@
+html {
+    background: #f6f6f1 url("../img/bg-content.png") fixed
+}
+body {
+    font: 14px/1.286 "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", Lucida, Arial, Helvetica, sans-serif;
+    background: transparent;
+
+}
+#masthead {
+    background: #000;
+    border-bottom: 4px solid #f8d575;
+    color: #ccc;
+    min-height: 70px;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+#masthead h1 {
+    margin: 0;
+    line-height: 70px;
+}
+#nav-toolbar {
+    font-size: .785em;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, .25);
+    padding: 0;
+    border-top: 1px solid #cbc8b9;
+    border-bottom: 1px solid #f8f8f6;
+    background: #f6f6f1 url("../img/bg-content.png") fixed;
+    background: rgba(198, 198, 175, .35);
+}
+#nav-toolbar .crumbs ol {
+    margin: 0;
+    padding: .6em 0 .7em;
+    list-style: none;
+}
+#nav-toolbar .crumbs li {
+    display: inline;
+    padding-left: 13px;
+    margin-left: 6px;
+    background: url("../img/nav-arrows.png") -15px -698px no-repeat;
+}
+#nav-toolbar .crumbs li:first-child {
+    padding-left: 0;
+    margin-left: 0;
+    background: none;
+}
+#nav-toolbar .crumbs li a {
+    text-decoration: underline;
+}
+#nav-toolbar a:link, #nav-toolbar a:visited {
+    color: #6d6d67;
+}
+#nav-toolbar a:link, #nav-toolbar a:visited {
+    color: #6d6d67;
+}
+#nav-toolbar a:link, #nav-toolbar a:visited {
+    color: #6d6d67;
+}
+#nav-toolbar a:link, #nav-toolbar a:visited {
+    color: #6d6d67;
+}
+
+#mastcontent {
+    position: relative;
+}
+
+#wikiTool {
+    position: absolute;
+    right: 5px;
+    top: 25px;
+}
+
+#wikiTitle {
+    margin: 20px 0;
+}
+
+#wikiContent {
+    background: #fff;
+    padding: 18px;
+    margin: 0 4px 26px 0;
+    border: 1px solid #ecece7;
+    -moz-box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
+    -webkit-box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
+    box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
+}
