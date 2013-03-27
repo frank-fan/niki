@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/css/reset.css'/>
+  <link rel='stylesheet' href='/css/style.css'/>
+  <script type="text/javascript" src="/libs/editor/js/editor.js"></script>
+  <link rel="stylesheet" href="/libs/editor/css/editor.css"/>
+</head>
+<body>
+<header id="masthead">
+  <hgroup class="container">
+    <h1>Niki</h1>
+  </hgroup>
+</header>
+<section id="nav-toolbar">
+  <div class="container">
+    <nav class="crumbs" role="navigation">
+      <ol>
+        <li class="crumb"><a href="/">HOME</a></li>
+        <li class="crumb">Using HTML5 audio and video</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+<div id="mastcontent" class="container">
+  <input id="wikiTitle" value="我是标题：<%= title %>"/>
+  <section id="wikiContent">
+    <div id="editor-wrapper">
+      <textarea id="editor" placeholder="Content here ...."></textarea>
+    </div>
+  </section>
+</div>
+<script type="text/javascript">
+  (function () {
+    var editor = new Editor();
+    editor.render();
+  })();
+</script>
+</body>
+</html>
