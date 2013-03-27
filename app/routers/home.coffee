@@ -2,6 +2,6 @@
 exports.index = (req, res) ->
   res.render 'index', title: 'adc'
 
-# URL: /about
-exports.about = (req, res) ->
-  res.render 'about', title: 'adc'
+# URL: /edit
+exports.edit = (req, res) ->
+  res.render 'edit', title: 'adc'
