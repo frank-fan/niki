@@ -25,12 +25,18 @@
   </div>
 </section>
 <div id="mastcontent" class="container">
-  <input id="wikiTitle" value="我是标题：<%= title %>"/>
-  <section id="wikiContent">
-    <div id="editor-wrapper">
-      <textarea id="editor" placeholder="Content here ...."></textarea>
+  <form method="POST">
+    <input id="wikiTitle" name="title" value="<%= title %>"/>
+    <input type="hidden" name="old_title" value="<%= title %>"/>
+    <section id="wikiContent">
+      <div id="editor-wrapper">
+        <textarea name="content" id="editor" placeholder="Content here ...."></textarea>
+      </div>
+    </section>
+    <div id="wikiAction" class="btns">
+      <button type="submit" id="page-save" class="btn" href="#edit">SAVE</button>
     </div>
-  </section>
+  </form>
 </div>
 <script type="text/javascript">
   (function () {

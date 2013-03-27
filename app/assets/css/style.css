@@ -75,8 +75,12 @@ body {
     right: 5px;
     top: 12px;
 }
+#wikiAction {
+    float: right;
+    margin-bottom: 20px;
+}
 
-#wikiTool .btn {
+.btn {
     background: #ddd url("../img/button-edit.png") 0 50% repeat-x;
     display: inline-block;
     color: #333;
@@ -91,17 +95,29 @@ body {
     -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.25);
     box-shadow: 1px 1px 0 rgba(0,0,0,.25);
     padding: 7px 8px 4px 32px;
+    cursor: pointer;
 }
 
 #wikiTitle {
-    font-size: 28px;
+    font-size: 26px;
+    line-height: 1.5;
     margin: 10px 0;
+}
+input#wikiTitle {
+    border: 1px solid #ecece7;
+    -moz-box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
+    -webkit-box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
+    box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
+    width: 100%;
+    text-indent: 18px;
+    color: #444;
+    line-height: 2em;
 }
 
 #wikiContent {
     background: #fff;
     padding: 18px;
-    margin: 0 4px 26px 0;
+    margin: 0 0 26px 0;
     border: 1px solid #ecece7;
     -moz-box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
     -webkit-box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
