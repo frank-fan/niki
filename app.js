@@ -17,6 +17,7 @@ app.configure(function () {
   app.use(express.bodyParser());
   app.use(express.cookieParser());
   app.use(express.session({ secret: config.secretKey }));
+  app.use(express.favicon(__dirname + '/app/assets/favicon.ico'));
 });
 
 app.configure('development', function () {

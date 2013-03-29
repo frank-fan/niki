@@ -23,17 +23,13 @@
     </div>
 </section>
 <div id="mastcontent" class="container">
-  <h1 id="wikiTitle">我是标题：<%= title %></h1>
+  <h1 id="wikiTitle"><%= title %></h1>
   <div id="wikiTool" class="btns">
-    <a id="page-edit" class="btn" href="#edit">EDIT</a>
+    <a id="page-edit" class="btn" href="/edit/<%= slug %>">EDIT</a>
   </div>
   <section id="wikiContent">
     <article id="article-wrapper">
-      <p>Welcome to <%= title %></p>
-      <p>Welcome to <%= title %></p>
-      <p>Welcome to <%= title %></p>
-      <p>Welcome to <%= title %></p>
-      <p>Welcome to <%= title %></p>
+      <%- content %>
     </article>
   </section>
 </div>

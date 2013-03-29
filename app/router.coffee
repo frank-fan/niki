@@ -1,5 +1,6 @@
 home = require('./routers/home')
 
 module.exports = (app) ->
-  app.get '/' , home.index
-  app.get '/edit' , home.edit
+  app.get '/edit/:slug' , home.edit
+  app.post '/edit' , home.edit
+  app.get '/*' , home.index

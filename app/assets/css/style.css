@@ -124,6 +124,14 @@ input#wikiTitle {
     box-shadow: 2px 2px 0 rgba(170, 160, 130, .5), 4px 4px 0 rgba(200, 190, 165, .5);
 }
 
+#wikiContent article h1 {font-size: 20px;}
+#wikiContent article h2 {font-size: 18px;}
+#wikiContent article h3 {font-size: 16px;}
+#wikiContent article h4 {font-size: 14px;}
+#wikiContent article strong{ font-weight: bold; }
+#wikiContent article ul {list-style-type: disc; margin-left: 18px;}
+#wikiContent article ol {list-style-type: decimal; margin-left: 18px;}
+
 .editor-toolbar{
     text-align: center;
 }
