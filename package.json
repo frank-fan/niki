@@ -9,6 +9,8 @@
         "express": "3.0.2",
         "ejs": "*",
         "coffee-script": "*",
-        "mocha": "*"
+        "mocha": "*",
+        "marked": "*",
+        "chai": "*"
     }
 }

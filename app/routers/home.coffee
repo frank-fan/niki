@@ -8,9 +8,8 @@ exports.index = (req, res) ->
     slug = "index"
   wikiModel = new wiki "", slug, ""
   wikiModel.get (result) ->
-    wikiModel.content = marked(wikiModel.content)
-
     if result
+      wikiModel.content = marked(wikiModel.content)
       res.render 'index', wikiModel
     else
       res.redirect "/edit/" + slug
@@ -18,7 +17,8 @@ exports.index = (req, res) ->
 # URL: /edit
 exports.edit = (req, res) ->
   if req.method is "GET"
-    wikiModel = new wiki "", req.params.slug, ""
+    slug = req.url.substr 6
+    wikiModel = new wiki "", slug, ""
     wikiModel.get (result) ->
       if result
         res.render "edit", wikiModel

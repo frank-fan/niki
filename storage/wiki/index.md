@@ -1,16 +1,24 @@
 ---
-title: 首页
+title: AirDroid 接口文档
 slug: index
 ---
 
-##首页
+##短信模块
+> 天雷滚滚滚。。。。。
 
-**FXSB**
+###发送短信
 
-* 1asdfasd
-* 2asdf
+###接受短信
 
-xxxx
+###短信通知
 
-1. 1asdfasd
-2. 2asdf
+###短信搜索
+
+	app.configure('development', function () {
+	  app.use(express.static(static_dir));
+	  app.use(express.errorHandler({
+		dumpExceptions: true,
+		showStack: true
+	  }));
+	});
+[文件管理](/file/index)
