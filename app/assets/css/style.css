@@ -116,3 +116,34 @@ input#wikiTitle {
 .editor-toolbar{
     text-align: center;
 }
+#article-nav {
+    float: right;
+    padding: 0 0 1em 20px;
+    background: #fff;
+    width: 270px;
+    position: relative;
+    z-index: 1;
+}
+#article-nav .page-toc {
+    background: #e4edf7;
+    padding: 16px 18px;
+    margin: 0 0 5px;
+    border: 1px solid #dfe8f2;
+    font-size: .857em;
+}
+#article-nav .page-toc div.title {
+    margin: 0 0 .75em;
+    border: 0;
+    padding: 0;
+    font-size:20px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+#article-nav .page-toc ol {
+    padding-left: 0;
+}
+#article-nav .page-toc ol li {
+    margin-bottom: .25em;
+    margin-left: .7em;
+    text-indent: -.5em;
+}
