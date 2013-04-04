@@ -47,4 +47,23 @@ exports.edit = (req, res) ->
           res.redirect "edit/" + wikiModel.slug
 
 exports.dillinger = (req, res)->
-  res.render "dillinger"
+  if req.method is "GET"
+    slug = req.url.substr 6
+    wikiModel = new wiki "", slug, ""
+    wikiModel.get (result) ->
+      if result
+        res.render "dillinger", wikiModel
+      else
+        #the wiki do not exist, set a title
+        res.render "dillinger", wikiModel
+  else
+    console.log "POST edit."
+    wikiModel = new wiki(req.body.title, req.body.slug, req.body.content)
+    validate = wikiModel.validate()
+    if validate
+      wikiModel.save (err) ->
+        unless err
+          res.redirect "/" + wikiModel.slug
+        else
+          console.log err
+          res.redirect "dillinger/" + wikiModel.slug

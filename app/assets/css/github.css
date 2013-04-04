@@ -1,5 +1,5 @@
 #preview {
-    font-family: Helvetica, arial, sans-serif;
+    font-family: "microsoft yahei", Helvetica, arial, sans-serif;
     font-size: 14px;
     line-height: 1.6;
     padding-top: 10px;
@@ -12,6 +12,9 @@
 #preview > *:last-child {
     margin-bottom: 0 !important; }
 
+#preview pre {
+    width: 500px;
+}
 a {
     color: #4183C4; }
 a.absent {

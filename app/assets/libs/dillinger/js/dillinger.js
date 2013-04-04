@@ -246,8 +246,6 @@ $(function () {
             bindFilenameField()
 
             autoSave()
-
-
         }
 
     }
@@ -334,7 +332,6 @@ $(function () {
         updateUserProfile({currentMd: editor.getSession().getValue()})
 
         isManual && Notifier.showMessage(Notifier.messages.docSavedLocal)
-
     }
 
     /**
@@ -347,14 +344,12 @@ $(function () {
         if (profile.autosave.enabled) {
             autoInterval = setInterval(function () {
                 // firefox barfs if I don't pass in anon func to setTimeout.
-                //saveFile()
+                saveFile()
             }, profile.autosave.interval)
-
         }
         else {
             clearInterval(autoInterval)
         }
-
     }
 
     /**
@@ -443,11 +438,12 @@ $(function () {
 
         var unmd = editor.getSession().getValue()
             , md = /*converter.makeHtml(unmd)*/ marked(unmd)
-
-        $preview
-            .html('') // unnecessary?
-            .html(md)
-
+        $("#temp").html(md);
+        Rainbow.color($("#temp"), function() {
+            $preview
+                .html('') // unnecessary?
+                .html($("#temp").html())
+        })
     }
 
     /**
