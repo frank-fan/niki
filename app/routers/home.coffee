@@ -1,5 +1,14 @@
 wiki = require('../models/wiki')
 marked = require('marked')
+marked.setOptions({
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  langPrefix: 'language-'
+});
 
 # URL: /
 exports.index = (req, res) ->
@@ -26,6 +35,7 @@ exports.edit = (req, res) ->
         #the wiki do not exist, set a title
         res.render "edit", wikiModel
   else
+    console.log "POST edit."
     wikiModel = new wiki(req.body.title, req.body.slug, req.body.content)
     validate = wikiModel.validate()
     if validate
@@ -35,3 +45,6 @@ exports.edit = (req, res) ->
         else
           console.log err
           res.redirect "edit/" + wikiModel.slug
+
+exports.dillinger = (req, res)->
+  res.render "dillinger"

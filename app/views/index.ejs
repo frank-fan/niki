@@ -6,6 +6,12 @@
   <link rel='stylesheet' href='/css/reset.css'/>
   <link rel='stylesheet' href='/css/style.css'/>
   <link rel='stylesheet' href='/css/wiki.css'/>
+  <link href="/libs/rainbow/themes/obsidian.css" rel="stylesheet" type="text/css"><!--  solarized-dark.css  solarized-light.css  tomorrow-night.css twilight.css -->
+  <style type="text/css">
+    pre {
+      width: 700px;
+    }
+  </style>
 </head>
 <body>
 <header id="masthead">
@@ -25,7 +31,6 @@
 </section>
 <div id="mastcontent" class="container">
   <h1 id="wikiTitle"><%= title %></h1>
-
   <div id="wikiTool" class="btns">
     <a id="page-edit" class="btn" href="/edit/<%= slug %>">EDIT</a>
   </div>
@@ -39,10 +44,12 @@
       </div>
       <%- content %>
     </article>
-
   </section>
 </div>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/libs/rainbow/rainbow.min.js"></script>
+<script src="/libs/rainbow/language/generic.js"></script>
+<script src="/libs/rainbow/language/javascript.js"></script>
 <script type="text/javascript">
   (function () {
     var i = 0;

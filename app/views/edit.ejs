@@ -7,6 +7,7 @@
   <link rel='stylesheet' href='/css/style.css'/>
   <script type="text/javascript" src="/libs/editor/js/editor.js"></script>
   <link rel="stylesheet" href="/libs/editor/css/editor.css"/>
+  <script type="text/javascript" src="/libs/epic/js/epiceditor.min.js"></script>
 </head>
 <body>
 <header id="masthead">
@@ -29,19 +30,42 @@
     <input id="wikiTitle" name="title" value="<%= title %>"/>
     <input type="hidden" name="slug" value="<%= slug %>"/>
     <section id="wikiContent">
-      <div id="editor-wrapper">
+      <!--<div id="editor-wrapper">
         <textarea name="content" id="editor"><%= content %></textarea>
-      </div>
+      </div>-->
     </section>
+    <div id="epiceditor"></div>
     <div id="wikiAction" class="btns">
       <button type="submit" id="page-save" class="btn" href="#edit">SAVE</button>
     </div>
   </form>
 </div>
-<script type="text/javascript">
+
+<!--<script type="text/javascript">
   (function () {
     var editor = new Editor();
     editor.render();
+  })();
+</script>-->
+<script type="text/javascript">
+  (function(){
+    var opts = {
+      container: 'epiceditor',
+      basePath: '/libs/epic/',
+      parser: marked,
+      theme: {
+        base:     '/themes/base/epiceditor.css',
+        preview:  '/themes/preview/preview-dark.css',
+        editor:   '/themes/editor/epic-dark.css'
+      },
+      shortcut: {
+        modifier: 18,
+        fullscreen: 70,
+        preview: 80
+      }
+    }
+    var editor = new EpicEditor(opts).load();
+
   })();
 </script>
 </body>

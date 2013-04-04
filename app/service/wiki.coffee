@@ -9,6 +9,7 @@ exports.get = (wiki, callBack) ->
 #sms/index
 #sms/ok/index
 exports.save = (wiki, callBack) ->
+  console.log (JSON.stringify(wiki)) + "--wiki"
   if (not wiki.slug?) or (wiki.slug.indexOf('/') == 0) or (wiki.slug.indexOf('/') == wiki.slug.length - 1)
     callBack "wiki.slug is not valid"
     return;
