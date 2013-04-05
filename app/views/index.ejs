@@ -3,49 +3,40 @@
 <head>
   <title><%= title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='/css/reset.css'/>
-  <link rel='stylesheet' href='/css/style.css'/>
-  <link rel='stylesheet' href='/css/wiki.css'/>
-  <link href="/libs/rainbow/themes/obsidian.css" rel="stylesheet" type="text/css"><!--  solarized-dark.css  solarized-light.css  tomorrow-night.css twilight.css -->
-  <style type="text/css">
-    pre {
-      width: 700px;
-    }
-  </style>
+  <!--<link rel='stylesheet' href='/css/reset.css'/>-->
+  <!--<link rel='stylesheet' href='/css/style.css'/>-->
+
+  <link rel='stylesheet' href='/css/bootstrap.css'/>
+  <link rel='stylesheet' href='/css/bootstrap-responsive.css'/>
+  <link rel='stylesheet' href='/css/github.css'/>
+  <link rel='stylesheet' href='/css/index.css'/>
+  <link href="/libs/rainbow/themes/obsidian.css" rel="stylesheet" type="text/css">
+  <!--  solarized-dark.css  solarized-light.css  tomorrow-night.css twilight.css -->
 </head>
 <body>
-<header id="masthead">
-  <hgroup class="container">
-    <h1>Niki</h1>
-  </hgroup>
-</header>
-<section id="nav-toolbar" style="display: none">
-  <div class="container">
-    <nav class="crumbs" role="navigation">
-      <ol>
-        <li class="crumb"><a href="/">HOME</a></li>
-        <li class="crumb">Using HTML5 audio and video</li>
-      </ol>
-    </nav>
-  </div>
-</section>
-<div id="mastcontent" class="container">
-  <h1 id="wikiTitle"><%= title %></h1>
-  <div id="wikiTool" class="btns">
-    <a id="page-edit" class="btn" href="/edit/<%= slug %>">EDIT</a>
-  </div>
-  <section id="wikiContent">
-    <article id="article-wrapper">
-      <div id="article-nav">
-        <div class="page-toc">
-          <div class="title">目录</div>
-          <ol></ol>
-        </div>
+<div class="container">
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" id="niki" href="#">Niki</a>
       </div>
+    </div>
+  </div>
+  <div class="bs-docs-sidebar">
+    <ul class="nav nav-list bs-docs-sidenav" id="structure">
+    </ul>
+  </div>
+  <div class="container-fluid">
+    <h1 id="title"><%= title %></h1>
+    <div id="content" class="shadowbox">
       <%- content %>
-    </article>
-  </section>
+    </div>
+  </div>
 </div>
+
+
+<a href="/edit/<%= slug %>" id="edit">Edit</a>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/libs/rainbow/rainbow.min.js"></script>
 <script src="/libs/rainbow/language/generic.js"></script>
@@ -53,9 +44,10 @@
 <script type="text/javascript">
   (function () {
     var i = 0;
-    $('#wikiContent').find('h3').each(function (index, item) {
+    $('#content').find('h2').each(function (index, item) {
       $(item).attr('id', "subTitle" + i);
-      $('<li><a href="#subTitle' + i + '" rel="internal">' + $(item).text() + '</a></li>').appendTo($('#article-nav').find('ol'));
+     // $('<li><a href="#subTitle' + i + '" rel="internal">' + $(item).text() + '</a></li>').appendTo($('#structure'));
+      $('<li class=""><a href="#subTitle' + i + '"><i class="icon-chevron-right"></i>' + $(item).text() + '</a></li>').appendTo($('#structure'));
       i++;
     });
   })();
